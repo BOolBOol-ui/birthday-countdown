@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#190e22">
+  <title>A Birthday Is Almost Here 💗</title>
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      --pink: #f5a5ce;
+      --lavender: #dca9ff;
+      --soft: #eadde9;
+      --muted: #c9b3ca;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      padding: 22px;
+      color: #fff;
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      background:
+        radial-gradient(ellipse at 50% 0%, #54265f 0%, transparent 48%),
+        radial-gradient(ellipse at 100% 100%, #382044 0%, transparent 42%),
+        linear-gradient(145deg, #190e22, #100914 80%);
+    }
+    .glow {
+      position: fixed;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: #e99bd0;
+      filter: blur(115px);
+      opacity: .15;
+      pointer-events: none;
+    }
+    .glow.one { top: -130px; right: -70px; }
+    .glow.two { bottom: -150px; left: -70px; background: #b98cff; }
+    .card {
+      position: relative;
+      width: min(100%, 590px);
+      padding: clamp(28px, 6vw, 48px) clamp(20px, 5vw, 42px);
+      text-align: center;
+      border: 1px solid #ffffff27;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #ffffff13, #ffffff08);
+      box-shadow: 0 24px 90px #0007, inset 0 1px #ffffff12;
+      backdrop-filter: blur(12px);
+      animation: appear .9s ease both;
+    }
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(18px) scale(.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .heart {
+      color: var(--pink);
+      font-size: 48px;
+      line-height: 1;
+      text-shadow: 0 0 28px #f5a5ce88;
+      animation: beat 1.7s ease-in-out infinite;
+    }
+    @keyframes beat { 50% { transform: scale(1.12); } }
+    .eyebrow {
+      margin-top: 20px;
+      color: #e8c5e0;
+      font-size: 12px;
+      letter-spacing: 4px;
+      direction: ltr;
+    }
+    h1 {
+      margin: 15px 0 10px;
+      font-size: clamp(25px, 6vw, 37px);
+      line-height: 1.5;
+      font-weight: 700;
+      background: linear-gradient(90deg, #fff, #f6b7d9, #dfb8ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .subtitle {
+      margin: 0 auto;
+      max-width: 430px;
+      color: var(--soft);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    .date {
+      display: inline-block;
+      margin: 23px 0 19px;
+      padding: 9px 18px;
+      border: 1px solid #f5a5ce55;
+      border-radius: 999px;
+      color: #f6c6e2;
+      background: #f5a5ce12;
+      font-size: 14px;
+      direction: ltr;
+    }
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      direction: ltr;
+      margin-top: 4px;
+    }
+    .unit {
+      padding: 17px 5px 14px;
+      border: 1px solid #ffffff20;
+      border-radius: 18px;
+      background: #120b1b99;
+      box-shadow: inset 0 1px #ffffff0b;
+    }
+    .number {
+      display: block;
+      color: #fff;
+      font-size: clamp(27px, 7vw, 39px);
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.2;
+    }
+    .label {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .5px;
+    }
+    .footer {
+      margin-top: 25px;
+      color: #bcaabd;
+      font-size: 12px;
+      direction: ltr;
+      letter-spacing: 1px;
+    }
+    .celebration {
+      display: none;
+      margin-top: 24px;
+      color: #fff;
+      font-size: clamp(23px, 5.7vw, 34px);
+      line-height: 1.9;
+      font-weight: 700;
+      text-shadow: 0 0 25px #f5a5ce55;
+      animation: appear .8s ease both;
+    }
+    .celebration small {
+      display: block;
+      margin-top: 10px;
+      color: #f5b8d9;
+      font-size: 24px;
+    }
+    .sparkles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      border-radius: 30px;
+    }
+    .sparkles span {
+      position: absolute;
+      color: #f5a5ce99;
+      animation: float 7s linear infinite;
+      font-size: 15px;
+    }
+    .sparkles span:nth-child(1) { right: 9%; bottom: -20px; animation-delay: 0s; }
+    .sparkles span:nth-child(2) { right: 25%; bottom: -20px; animation-delay: 2s; }
+    .sparkles span:nth-child(3) { left: 17%; bottom: -20px; animation-delay: 4s; }
+    .sparkles span:nth-child(4) { left: 8%; bottom: -20px; animation-delay: 1s; }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0); opacity: 0; }
+      15% { opacity: .8; }
+      100% { transform: translateY(-620px) rotate(35deg); opacity: 0; }
+    }
+    @media (max-width: 390px) {
+      .countdown { gap: 6px; }
+      .unit { padding: 14px 2px 12px; }
+      .label { font-size: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow one"></div><div class="glow two"></div>
+  <main class="card">
+    <div class="sparkles" aria-hidden="true"><span>✦</span><span>♥</span><span>✧</span><span>♥</span></div>
+    <div class="heart">♥</div>
+    <div class="eyebrow">A SPECIAL DAY IS COMING</div>
+    <h1>في يوم مميز جدًا قرب يبدأ 💗</h1>
+    <p class="subtitle">وفيه حد مميز جدًا مستنيين نحتفل بيه…</p>
+    <div class="date">NOVEMBER 9 · 12:00 AM</div>
+
+    <section class="countdown" id="countdown" aria-label="Countdown">
+      <div class="unit"><span class="number" id="days">00</span><span class="label">DAYS</span></div>
+      <div class="unit"><span class="number" id="hours">00</span><span class="label">HOURS</span></div>
+      <div class="unit"><span class="number" id="minutes">00</span><span class="label">MINUTES</span></div>
+      <div class="unit"><span class="number" id="seconds">00</span><span class="label">SECONDS</span></div>
+    </section>
+
+    <div class="celebration" id="celebration">
+      بدأ عيد ميلاد أجمل وأحسن بنت عرفتها في حياتي، ومالية حياتي كلها فرح 💗
+      <small>Happy Birthday ✨</small>
+    </div>
+    <div class="footer" id="footer">COUNTING DOWN TO YOUR SPECIAL DAY</div>
+  </main>
+
+  <script>
+    // Midnight at the beginning of November 9, 2026, Egypt time (UTC+2).
+    const birthday = new Date("2026-11-09T00:00:00+02:00").getTime();
+    const ids = ["days", "hours", "minutes", "seconds"];
+    const pad = value => String(value).padStart(2, "0");
+
+    function updateCountdown() {
+      const remaining = birthday - Date.now();
+
+      if (remaining <= 0) {
+        document.getElementById("countdown").style.display = "none";
+        document.querySelector(".eyebrow").textContent = "IT'S YOUR SPECIAL DAY";
+        document.querySelector("h1").textContent = "النهارده يومك إنتِ 💗";
+        document.querySelector(".subtitle").style.display = "none";
+        document.querySelector(".date").style.display = "none";
+        document.getElementById("celebration").style.display = "block";
+        document.getElementById("footer").textContent = "HAPPY BIRTHDAY ✨";
+        return;
+      }
+
+      const values = [
+        Math.floor(remaining / 86400000),
+        Math.floor((remaining % 86400000) / 3600000),
+        Math.floor((remaining % 3600000) / 60000),
+        Math.floor((remaining % 60000) / 1000)
+      ];
+      ids.forEach((id, index) => {
+        document.getElementById(id).textContent = pad(values[index]);
+      });
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
